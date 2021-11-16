@@ -6,9 +6,10 @@ const theme = {
     gray100: '#F2F4F5',
     black200: '#727172',
     gray300: '#787775',
-    gray400: '#474747',
-    blue100: '#116096',
-    green100: '#227794'
+    gray400: '#121214',
+    gray500: '#282524',
+    orange: '#FF7F00',
+    yellow: '#FFFF00'
   },
   sizes: {
     xsmall: '0.624rem',

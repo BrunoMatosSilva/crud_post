@@ -14,7 +14,12 @@ export default createGlobalStyle`
   }
 
   h1 {
-  color: ${props => props.theme.colors.gray100};
+  background-color: ${props => props.theme.colors.orange};
+  background: -webkit-linear-gradient(45deg,#FF7F00, #FFFF00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
   }
 
   body,

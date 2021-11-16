@@ -8,7 +8,7 @@ button {
 
     .icon-return {
         font-size: 2.5rem;
-        color: ${props => props.theme.colors.white};
+        color: ${props => props.theme.colors.orange};
         transition: all 0.2s ease-in-out;
 
         &:hover {

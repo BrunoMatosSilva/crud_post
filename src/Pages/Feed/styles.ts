@@ -17,7 +17,9 @@ div {
         border-radius: 5px;
         border: none;
         padding: 0.5rem;
-        background: ${props => props.theme.colors.white} ;
+        font-weight: bold;
+        color: ${props => props.theme.colors.black};
+        background: linear-gradient(45deg,#FF7F00, #FFFF00);
         transition: filter 0.2s;
 
         &:hover {
@@ -33,7 +35,7 @@ align-items: center;
 padding-top: 2.5rem;
 
 .card {
-    background: ${props => props.theme.colors.white};
+    background: ${props => props.theme.colors.gray500};
     border-radius: 5px;
     margin-bottom: 1rem;
 }
@@ -42,7 +44,7 @@ padding-top: 2.5rem;
     display: flex;
     flex-wrap: wrap;
     max-width: 500px;
-    color: ${props => props.theme.colors.blue100};
+    color: ${props => props.theme.colors.orange};
     padding-left: 1rem;
 }
 
@@ -85,7 +87,7 @@ p {
     
     padding: 0 1rem 1rem 1rem;
 
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.white};
 }
 
 .btns {
