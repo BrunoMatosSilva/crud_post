@@ -31,7 +31,7 @@ padding-top: 2.5rem;
     font-weight: 800;
     text-align: center;
 
-    color: ${props => props.theme.colors.blue100};
+    color: ${props => props.theme.colors.orange};
 
     font-size: 3rem;
     margin-bottom: 5px;
@@ -95,7 +95,7 @@ textarea {
     font-size: 1.3rem;
 
     padding: 5px 50px;
-    color: #fff;
+    color: ${props => props.theme.colors.gray400};
     background-color: #3DECB1;
 
     border: 0;

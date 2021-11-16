@@ -10,8 +10,24 @@ export default createGlobalStyle`
   body {
   background: ${props => props.theme.colors.black};
   color: ${props => props.theme.colors.white};
-  width: 100vw;
+
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: ${props => props.theme.colors.gray400} ${props => props.theme.colors.orange};   /* scroll thumb and track */
   }
+
+  body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: ${props => props.theme.colors.gray400};        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: ${props => props.theme.colors.orange};    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid ${props => props.theme.colors.gray400};  /* creates padding around scroll thumb */
+}
 
   h1 {
   background-color: ${props => props.theme.colors.orange};

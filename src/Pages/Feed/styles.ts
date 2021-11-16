@@ -38,6 +38,7 @@ padding-top: 2.5rem;
     background: ${props => props.theme.colors.gray500};
     border-radius: 5px;
     margin-bottom: 1rem;
+    align-items: center;
 }
 
 .cards .card h2 {
@@ -96,7 +97,7 @@ p {
 }
 
 .btns button {
-    color: rgba(255, 255, 255, 0.938);
+    color: ${props => props.theme.colors.gray500};
     font-size: 1.3rem;
     border: 0;
 
@@ -113,15 +114,30 @@ p {
 
 .btn-edit button{
     background-color: #80D8FF;
+    transition: filter 0.2s;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
 }
 
 .btn-readmore button{
     background-color: #3DECB1;
+    transition: filter 0.2s;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
     
 }
 
 .btn-delete button{
     background-color: rgb(241, 45, 45);
+    transition: filter 0.2s;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
 }
 
 .loading {

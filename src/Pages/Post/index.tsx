@@ -1,14 +1,16 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
 import { ContainerHeader, ContainerMain } from './styles';
 import ButtonReturn from '../../components/ButtonReturn';
+import { api } from '../../services/api';
 
 interface IFormData {
-    title: String;
-    description: String;
-    content: String;
+    title: string;
+    description: string;
+    content: string;
 }
 
 const schema = yup.object().shape({
@@ -18,11 +20,20 @@ const schema = yup.object().shape({
 });
 
 export function Post() {
+    let history = useHistory();
+
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
 
-    const addPost: SubmitHandler<IFormData> = data => console.log(data);
+    const addPost: SubmitHandler<IFormData> = data => api.post(
+        "create_post",
+        data).then(() => {
+            console.log("Post Criado")
+            history.push("/")
+        }).catch(() => {
+            console.log("Erro de criação")
+        });
 
     return (
         <>
