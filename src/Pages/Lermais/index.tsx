@@ -1,9 +1,33 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ButtonReturn from '../../components/ButtonReturn'
 import Header from '../../components/Header'
+import { api } from '../../services/api'
 import { ContainerHeader, ContainerMain } from './styles'
 
-export function Lermais() {
+interface IPostData {
+    title: string;
+    content: string;
+}
+
+interface Iid {
+    id: string;
+}
+
+export function Lermais({ title, content }: IPostData) {
+
+
+    const [lermais, setLermais] = useState({ title, content })
+
+    const { id } = useParams<Iid>();
+
+    useEffect(() => {
+        api.get(`/list_post/${id}`)
+            .then((response) => {
+                setLermais(response.data.post)
+            })
+    }, [])
+
     return (
         <>
             <ContainerHeader>
@@ -16,20 +40,15 @@ export function Lermais() {
                 <div className="cards">
                     <div className="card">
                         <header>
-                            <h2>Curso consumindo API</h2>
+                            <h2>{lermais.title}</h2>
                         </header>
 
                         <div className="line"></div>
 
-                        <p>Nesse curso eu ensino vocês a consumirem uma api, com react.js.
-                            Nesse curso eu ensino vocês a consumirem uma api, com react.js
-                            Nesse curso eu ensino vocês a consumirem uma api, com react.js
-                            Nesse curso eu ensino vocês a consumirem uma api, com react.js
-                            Nesse curso eu ensino vocês a consumirem uma api, com react.js
-                        </p>
+                        <p>{lermais.content}</p>
                     </div>
                 </div>
             </ContainerMain>
         </>
-    )
+    );
 }

@@ -65,7 +65,7 @@ export function Feed() {
                   </div>
 
                   <div className="btn-readmore">
-                    <Link to="/lermais">
+                    <Link to={{ pathname: `/lermais/${post._id}` }}>
                       <button>Ler Mais</button>
                     </Link>
                   </div>

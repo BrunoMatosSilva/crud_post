@@ -17,7 +17,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Feed} />
             <Route path="/post" component={Post} />
-            <Route path="/lermais" component={Lermais} />
+            <Route path="/lermais/:id" component={Lermais} />
             <Route path="/edit/:id" component={Edit} />
           </Switch>
         </BrowserRouter>
