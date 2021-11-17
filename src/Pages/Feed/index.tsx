@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import ImgMore from '../../images/more.svg'
+import { motion } from "framer-motion";
+import { fadeIn } from '../../styles/variants'
 import { api } from '../../services/api';
 
 interface IPostData {
@@ -37,7 +39,11 @@ export function Feed() {
         <Header />
 
         <Link to="/post">
-          <button className="btn-new">Add new Post</button>
+          <motion.button
+            variants={fadeIn("down")}
+            initial="initial"
+            animate="animate"
+            className="btn-new">Add new Post</motion.button>
         </Link>
       </ContainerHeader>
       <ContainerMain>
@@ -46,7 +52,11 @@ export function Feed() {
           {posts.map((post) => {
 
             return (
-              <div className="card" key={post._id}>
+              <motion.div
+                variants={fadeIn("down")}
+                initial="initial"
+                animate="animate"
+                className="card" key={post._id}>
                 <header>
                   <h2>{post.title}</h2>
                   <img src={ImgMore} alt="Mais Posts" />
@@ -74,7 +84,7 @@ export function Feed() {
                     <button onClick={() => deletePost(post._id)} >Deletar</button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             )
           })}
         </div>
