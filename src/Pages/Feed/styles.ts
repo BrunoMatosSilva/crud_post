@@ -11,6 +11,10 @@ div {
     width: 1180px;
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 540px) {
+        width: 400px;
+    }
 }
 
 .btn-new{
@@ -39,6 +43,10 @@ padding-top: 2.5rem;
     border-radius: 5px;
     margin-bottom: 1rem;
     align-items: center;
+
+    @media only screen and (max-width: 540px) {
+        width: 350px;
+    }
 }
 
 .cards .card h2 {
@@ -94,6 +102,11 @@ p {
 .btns {
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 540px) {
+    align-items: center;
+    flex-direction: column;
+    }
 }
 
 .btns button {
